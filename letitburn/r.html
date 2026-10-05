@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can you beat my rage score? — Let It Burn</title>
+<meta name="description" content="Write down what's making you angry, then scream it into ashes. Can you beat my rage score?">
+<!-- apple-itunes-app: put the real App Store ID here and in the download link below once the app record exists (AppLinks.appStoreID). -->
+<meta name="apple-itunes-app" content="app-id=0000000000">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Let It Burn">
+<meta property="og:url" content="https://chanbenny111.github.io/letitburn/r.html">
+<meta property="og:title" content="Can you beat my rage score? — Let It Burn">
+<meta property="og:description" content="Write down what's making you angry, then scream it into ashes. Can you beat my rage score?">
+<meta property="og:image" content="https://chanbenny111.github.io/letitburn/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Can you beat my rage score? — Let It Burn">
+<meta name="twitter:description" content="Write down what's making you angry, then scream it into ashes. Can you beat my rage score?">
+<meta name="twitter:image" content="https://chanbenny111.github.io/letitburn/og.png">
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .challenge { text-align: center; padding: 48px 0 24px; }
+  .challenge .label { text-transform: uppercase; letter-spacing: 0.18em; font-weight: 800; font-size: 14px; opacity: 0.75; margin: 0; }
+  .challenge .score { font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; font-weight: 900; font-size: clamp(96px, 28vw, 168px); line-height: 1; margin: 8px 0 4px;
+    background: linear-gradient(#ffd27a, #ff7a1a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .challenge h1 { margin: 8px 0 12px; }
+  .challenge .lede { max-width: 32em; margin: 0 auto; }
+  .challenge .fine { font-size: 14px; opacity: 0.7; margin-top: 18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <img src="icon.png" alt="">
+    <a class="brand" href="index.html">Let It Burn</a>
+    <nav><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+  </header>
+
+  <main class="challenge">
+    <p class="label" id="label">Rage score</p>
+    <p class="score" id="score" aria-live="polite">?</p>
+    <h1 id="title">Can you beat it?</h1>
+    <p class="lede" id="lede">Write down what's making you angry, then scream at your phone. Your voice is the fuel: the louder you are, the faster the page burns.</p>
+    <a class="btn" id="cta" href="https://apps.apple.com/app/id0000000000">Download on the App Store</a>
+    <p class="fine" id="fine">Nothing you write or scream is ever recorded or saved.</p>
+  </main>
+
+  <footer>
+    © 2026 Let It Burn · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a>
+  </footer>
+</div>
+<script>
+// Everything happens in the browser: the score comes from the link (?s=94) and is never sent anywhere.
+(function () {
+  var copy = {
+    en: { label: "Rage score", title: "Can you beat {s}?", none: "Can you beat it?", lede: "Write down what's making you angry, then scream at your phone. Your voice is the fuel: the louder you are, the faster the page burns.", cta: "Download on the App Store", fine: "Nothing you write or scream is ever recorded or saved." },
+    ja: { label: "怒りスコア", title: "{s} を超えられる？", none: "超えられる？", lede: "腹が立っていることを書いて、スマホに向かって叫ぼう。声が燃料になって、大きな声ほどページが速く燃える。", cta: "App Store でダウンロード", fine: "書いたことも叫んだ声も、録音・保存されることはありません。" },
+    ko: { label: "분노 점수", title: "{s}점, 넘을 수 있어요?", none: "넘을 수 있어요?", lede: "화나는 일을 적고, 휴대폰에 대고 소리 질러 보세요. 목소리가 연료가 되어, 클수록 페이지가 더 빨리 타요.", cta: "App Store에서 다운로드", fine: "쓴 글도, 지른 소리도 절대 녹음되거나 저장되지 않아요." },
+    "zh-Hans": { label: "怒气值", title: "你能超过 {s} 吗？", none: "你能超过吗？", lede: "写下让你生气的事，然后对着手机大喊。你的声音就是燃料：越大声，纸烧得越快。", cta: "在 App Store 下载", fine: "你写的字和喊的声音都不会被录制或保存。" },
+    "zh-Hant": { label: "怒氣值", title: "你能超過 {s} 嗎？", none: "你能超過嗎？", lede: "寫下讓你生氣的事，然後對著手機大喊。你的聲音就是燃料：越大聲，紙燒得越快。", cta: "在 App Store 下載", fine: "你寫的字和喊的聲音都不會被錄製或儲存。" },
+    es: { label: "Puntuación de rabia", title: "¿Puedes superar {s}?", none: "¿Puedes superarla?", lede: "Escribe lo que te enfada y grítale al móvil. Tu voz es el combustible: cuanto más fuerte, más rápido arde la página.", cta: "Descargar en el App Store", fine: "Nada de lo que escribes o gritas se graba ni se guarda." },
+    "es-419": { label: "Puntaje de rabia", title: "¿Puedes superar {s}?", none: "¿Puedes superarlo?", lede: "Escribe lo que te hace enojar y grítale al celular. Tu voz es el combustible: entre más fuerte grites, más rápido arde la página.", cta: "Descargar en el App Store", fine: "Nada de lo que escribes o gritas se graba ni se guarda." },
+    de: { label: "Wut-Score", title: "Schaffst du mehr als {s}?", none: "Schaffst du mehr?", lede: "Schreib auf, was dich wütend macht, und schrei dein Handy an. Deine Stimme ist der Brennstoff: Je lauter du bist, desto schneller brennt die Seite.", cta: "Im App Store laden", fine: "Nichts, was du schreibst oder schreist, wird aufgenommen oder gespeichert." },
+    fr: { label: "Score de rage", title: "Tu peux battre {s} ?", none: "Tu peux le battre ?", lede: "Écris ce qui te met en colère, puis crie sur ton téléphone. Ta voix est le carburant : plus tu cries fort, plus la page brûle vite.", cta: "Télécharger dans l'App Store", fine: "Rien de ce que tu écris ou cries n'est enregistré ni conservé." },
+    "fr-CA": { label: "Score de rage", title: "Peux-tu battre {s}?", none: "Peux-tu le battre?", lede: "Écris ce qui te met en colère, puis crie après ton cell. Ta voix, c'est le carburant\u00a0: plus tu cries fort, plus la page brûle vite.", cta: "Télécharger dans l'App Store", fine: "Rien de ce que tu écris ou cries n'est enregistré ni conservé." }
+  };
+  var langs = (navigator.languages || [navigator.language || "en"]).map(function (l) { return l || ""; });
+  var pick = "en";
+  for (var i = 0; i < langs.length; i++) {
+    var l = langs[i];
+    if (/^zh-(Hant|TW|HK|MO)/i.test(l)) { pick = "zh-Hant"; break; }
+    if (/^zh/i.test(l)) { pick = "zh-Hans"; break; }
+    // Same regional split as the app: Spain keeps es, every other Spanish gets es-419; Canada gets fr-CA.
+    if (/^es-(?!ES\b)/i.test(l)) { pick = "es-419"; break; }
+    if (/^fr-CA/i.test(l)) { pick = "fr-CA"; break; }
+    var base = l.split("-")[0].toLowerCase();
+    if (copy[base]) { pick = base; break; }
+  }
+  var t = copy[pick];
+  var raw = new URLSearchParams(window.location.search).get("s");
+  var n = parseInt(raw, 10);
+  var valid = /^\d{1,3}$/.test(raw || "") && n >= 0 && n <= 100;
+  document.documentElement.lang = pick;
+  document.getElementById("label").textContent = t.label;
+  document.getElementById("score").textContent = valid ? String(n) : "?";
+  document.getElementById("title").textContent = valid ? t.title.replace("{s}", String(n)) : t.none;
+  document.getElementById("lede").textContent = t.lede;
+  document.getElementById("cta").textContent = t.cta;
+  document.getElementById("fine").textContent = t.fine;
+  if (valid) { document.title = t.title.replace("{s}", String(n)) + " — Let It Burn"; }
+})();
+</script>
+</body>
+</html>

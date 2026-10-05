@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support · Visits Left</title>
+<meta name="description" content="Help with Visits Left: how the estimate is calculated, restoring purchases, widgets, reminders and deleting your data.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7F1E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161311" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://chanbenny111.github.io/visitsleft/support.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E8833A'/%3E%3Cg fill='%23F7F1E8'%3E%3Ccircle cx='18' cy='18' r='5' opacity='.35'/%3E%3Ccircle cx='32' cy='18' r='5' opacity='.35'/%3E%3Ccircle cx='46' cy='18' r='5' opacity='.35'/%3E%3Ccircle cx='18' cy='32' r='5' opacity='.35'/%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Ccircle cx='46' cy='32' r='5'/%3E%3Ccircle cx='18' cy='46' r='5'/%3E%3Ccircle cx='32' cy='46' r='5'/%3E%3Ccircle cx='46' cy='46' r='5'/%3E%3C/g%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Visits Left">
+<meta property="og:title" content="Support · Visits Left">
+<meta property="og:description" content="Help with Visits Left: how the estimate is calculated, restoring purchases, widgets, reminders and deleting your data.">
+<meta property="og:url" content="https://chanbenny111.github.io/visitsleft/support.html">
+<meta property="og:image" content="https://chanbenny111.github.io/visitsleft/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary">
+<!-- After the app is live, add the Smart App Banner: <meta name="apple-itunes-app" content="app-id=APP_STORE_ID"> -->
+<style>
+:root{
+  --paper:#F7F1E8; --ink:#2A2420; --muted:#6B5F56; --card:#FFFCF7; --line:rgba(42,36,32,.12);
+  --accent:#E8833A; --accent-ink:#B85A16; --dot-used:rgba(42,36,32,.16); --shadow:0 1px 2px rgba(42,36,32,.06),0 8px 28px rgba(42,36,32,.07);
+  --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#161311; --ink:#F3EADF; --muted:#A89A8E; --card:#201B18; --line:rgba(243,234,223,.12);
+    --accent:#E8833A; --accent-ink:#F0A061; --dot-used:rgba(243,234,223,.15); --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.25);}
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;letter-spacing:-.01em;margin:0 0 .5em}
+h1{font-size:clamp(2.2rem,6.5vw,4rem)}
+h2{font-size:clamp(1.6rem,4vw,2.4rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:12px;background:var(--card);padding:8px 12px;z-index:9}
+header.site{padding:18px 0;border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.brand img{width:28px;height:28px;border-radius:7px}
+nav.top a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:.95rem}
+nav.top a:hover{color:var(--ink)}
+.eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:600;margin-bottom:.8em}
+.lede{font-size:clamp(1.05rem,2.4vw,1.25rem);color:var(--muted);max-width:36em}
+.muted{color:var(--muted)}
+.small{font-size:.875rem}
+section{padding:72px 0}
+section+section{border-top:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:12px;padding:10px 18px 10px 14px;border:1px solid rgba(255,255,255,.25);line-height:1.1}
+.badge small{display:block;font-size:.7rem;opacity:.85}
+.badge strong{display:block;font-size:1.2rem;font-weight:600;letter-spacing:-.01em}
+.badge svg{width:22px;height:22px;fill:#fff}
+footer.site{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer.site nav a{color:var(--muted);margin-right:18px}
+footer.site p{margin:.5em 0}
+.prose h2{font-size:1.5rem;margin-top:2em}
+.prose h3{margin-top:1.6em}
+.prose ul{padding-left:1.2em}.prose li{margin:.35em 0}
+.note{border-left:3px solid var(--accent);padding:12px 16px;background:var(--card);border-radius:0 12px 12px 0}
+@media (max-width:560px){nav.top a{margin-left:12px}section{padding:52px 0}.card{padding:20px}}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 20px;margin:12px 0}
+details[open]{padding-bottom:6px}
+summary{cursor:pointer;list-style:none;padding:18px 32px 18px 0;font-weight:600;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:14px;font-size:1.4rem;color:var(--accent-ink);font-weight:400}
+details[open] summary::after{content:"\2212"}
+.contact{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;border-radius:999px;padding:12px 22px}
+.btn:hover{filter:brightness(1.05)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap">
+  <a class="brand" href="./"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E8833A'/%3E%3Cg fill='%23F7F1E8'%3E%3Ccircle cx='18' cy='18' r='5' opacity='.35'/%3E%3Ccircle cx='32' cy='18' r='5' opacity='.35'/%3E%3Ccircle cx='46' cy='18' r='5' opacity='.35'/%3E%3Ccircle cx='18' cy='32' r='5' opacity='.35'/%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Ccircle cx='46' cy='32' r='5'/%3E%3Ccircle cx='18' cy='46' r='5'/%3E%3Ccircle cx='32' cy='46' r='5'/%3E%3Ccircle cx='46' cy='46' r='5'/%3E%3C/g%3E%3C/svg%3E" alt="" width="28" height="28">Visits Left</a>
+  <nav class="top" aria-label="Primary"><a href="./#how">How it works</a><a href="./#pro">Pro</a><a href="support.html">Support</a></nav>
+</div></header>
+<main id="main">
+
+<section><div class="wrap narrow">
+<p class="eyebrow">Support</p>
+<h1>How can I help?</h1>
+<p class="lede">Answers to common questions about Visits Left. If yours isn&rsquo;t here, write to me. I read every message and usually reply within two business days.</p>
+<div class="contact"><a class="btn" href="mailto:chanbenny111@gmail.com?subject=Visits%20Left%20support">Email support</a><span class="muted small">chanbenny111@gmail.com</span></div>
+</div></section>
+<section><div class="wrap narrow">
+<h2>Frequently asked questions</h2>
+<details><summary>How is the number calculated?</summary>
+<p>Visits Left uses a Gompertz&ndash;Makeham mortality model, a standard way to describe how mortality changes with age. For each of 237 countries and areas and both sexes, the model is fitted to remaining life expectancy published in the UN World Population Prospects 2024, via Our World in Data (CC BY 4.0).</p>
+<p>From that, the app estimates how many more years you and the other person are both likely to be alive (assuming the two are independent), and multiplies it by how often you see each other. If you skip your own age, it uses only theirs. The full method is in <strong>Settings &rarr; How we calculate</strong>.</p></details>
+<details><summary>Is it accurate?</summary>
+<p>It&rsquo;s an average, not a forecast. This is a statistical estimate based on population averages, not a prediction about anyone&rsquo;s health. Real lives vary enormously. The number is meant as a gentle prompt to visit, not as information about any individual.</p></details>
+<details><summary>Why did the number change when I added my age?</summary>
+<p>With your age, the app counts only the years you&rsquo;ll <em>both</em> be around, which can be equal to or a little lower than their remaining years alone. It also enables the &ldquo;time already spent together&rdquo; line for parents and grandparents.</p></details>
+<details><summary>Why is my number different from a friend&rsquo;s?</summary>
+<p>Ages, country or region, the sex option you chose and, most of all, how often you visit all change the result. Try the &ldquo;what if&rdquo; slider on a person&rsquo;s page to see how much visiting more often matters.</p></details>
+<details><summary>How do I restore my Pro purchase?</summary>
+<p>Make sure you&rsquo;re signed in with the same Apple Account you used to buy Pro, then go to <strong>Settings &rarr; Restore Purchases</strong> (it&rsquo;s also on the upgrade screen). Pro is a one-time purchase, so there is nothing to renew or cancel. For refunds, use <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>; Apple handles all payments.</p></details>
+<details><summary>How do I add a widget?</summary>
+<p>Touch and hold an empty area of your Home Screen, tap <strong>Edit &rarr; Add Widget</strong> (or <strong>+</strong>), search for Visits Left and choose small or medium. For the Lock Screen, touch and hold the Lock Screen, tap <strong>Customize</strong>, then add Visits Left in the widget area. To choose who a widget shows, touch and hold it and tap <strong>Edit Widget</strong>. The free version includes a widget for your first person; Pro adds widgets for everyone.</p></details>
+<details><summary>How do reminders work?</summary>
+<p>Turn reminders on in Settings or on a person&rsquo;s page. iOS will then ask for notification permission. Visits Left only nudges you when it has been noticeably longer than your usual rhythm; for people you see weekly or more, you&rsquo;ll get a gentle Sunday note instead. Logging a visit reschedules everything. With Pro you can choose the time of day.</p>
+<p>Not getting reminders? Check <strong>iOS Settings &rarr; Notifications &rarr; Visits Left</strong> and make sure notifications are allowed and Focus isn&rsquo;t silencing them.</p></details>
+<details><summary>How do I delete my data?</summary>
+<p>All data lives only on your iPhone. To remove one person, open their page, tap <strong>Edit</strong>, then <strong>Delete</strong>; their visit log and photos go with them. To erase everything, delete the app. It may still exist in older iPhone backups until those are replaced. Nothing is stored anywhere else, because Visits Left has no servers.</p></details>
+<details><summary>Can I sync between devices?</summary>
+<p>Not at the moment. Visits Left keeps everything on one iPhone by design, with no account and no cloud service. It is restored along with the rest of your iPhone if you restore from a backup.</p></details>
+<details><summary>Does Visits Left access my contacts or photos?</summary>
+<p>No. Phone numbers are chosen through the system contact picker and photos through the system photo picker, so the app only ever receives the single number or photo you pick. Saving a share card to Photos asks for add-only permission.</p></details>
+<details><summary>Which languages are supported?</summary>
+<p>18 languages: English, Japanese, Korean, Simplified Chinese, Traditional Chinese, Spanish (Spain), Spanish (Latin America, also used in Mexico and the US), German, French (France), French (Canada), Italian, Dutch, Swedish, Danish, Norwegian, Portuguese (Brazil), Arabic and Hebrew. The app follows your iPhone&rsquo;s language; you can change it per app in <strong>iOS Settings &rarr; Visits Left &rarr; Language</strong>.</p></details>
+<p class="muted small" style="margin-top:28px">When you write, it helps to include your iPhone model, iOS version and the app version (shown at the bottom of Settings in the app).</p>
+</div></section>
+
+</main>
+<footer class="site"><div class="wrap">
+  <nav aria-label="Footer"><a href="./">Home</a><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a><a href="mailto:chanbenny111@gmail.com">chanbenny111@gmail.com</a></nav>
+  <p>Estimates use a Gompertz&ndash;Makeham model fitted to data from the UN World Population Prospects 2024, via <a href="https://ourworldindata.org/">Our World in Data</a>, licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+  <p>This is a statistical estimate based on population averages, not a prediction about anyone's health.</p>
+  <p>&copy; 2026 XQ Team. Apple, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
+</div></footer>
+</body>
+</html>
