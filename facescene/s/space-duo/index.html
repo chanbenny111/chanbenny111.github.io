@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 由 tools/build_manifest.dart 按场景生成 s/<id>/index.html 和通用的 s/index.html，别直接改生成物 -->
+<title>Space Duo — put your face in | FaceScene</title>
+<meta name="description" content="Put your face into the Space Duo scene — right in your camera. Free to try.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FaceScene">
+<meta property="og:title" content="Space Duo — put your face in | FaceScene">
+<meta property="og:description" content="Put your face into the Space Duo scene — right in your camera. Free to try.">
+<meta property="og:image" content="https://chanbenny111.github.io/facescene/og/space-duo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- iOS Safari 智能横幅：装了 App 的显示「打开」，一键直达同一个场景；APP_STORE_ID 上架后替换（见 docs/release.md） -->
+<meta name="apple-itunes-app" content="app-id=APP_STORE_ID, app-argument=https://chanbenny111.github.io/facescene/s/space-duo">
+<meta name="twitter:image" content="https://chanbenny111.github.io/facescene/og/space-duo.jpg">
+<style>
+  :root { --ink:#1d1b1a; --soft:#6e6863; --bg:#fff7f0; --accent:#ff5a36; }
+  @media (prefers-color-scheme: dark) { :root { --ink:#f2eeeb; --soft:#b7afa9; --bg:#15141a; } }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--bg); color:var(--ink); font:16px/1.5 -apple-system, system-ui, sans-serif; text-align:center; }
+  main { padding:24px 16px; max-width:420px; }
+  img { width:100%; max-width:360px; border-radius:20px; box-shadow:0 8px 24px rgba(0,0,0,.18); }
+  h1 { font-size:26px; margin:16px 0 6px; } p { color:var(--soft); margin:0 0 8px; }
+  a.alt { display:block; margin:12px auto 0; color:var(--soft); }
+  a.btn { display:block; margin:16px auto 0; max-width:280px; padding:14px; border-radius:26px; background:var(--accent); color:#fff; font-weight:700; text-decoration:none; }
+</style>
+</head>
+<body>
+<main>
+  <img src="https://chanbenny111.github.io/facescene/og/space-duo.jpg" alt="Space Duo — put your face in | FaceScene">
+  <h1>Your turn: Space Duo</h1>
+  <p>Put your face into the Space Duo scene — right in your camera. Free to try.</p>
+  <a class="btn" id="store" href="#">Try it in FaceScene</a>
+  <a class="alt" id="play" href="#" hidden>Get it on Google Play</a>
+</main>
+<script>
+  // 分享回流落地页：https://chanbenny111.github.io/facescene/s/<场景 id>
+  // 已安装：Universal Link / App Link 直接打开 App，到不了这里；
+  // 未安装：跳商店。Android 把场景 id 放进 Play 的 install referrer，安装后首次打开直达同一个场景的相机页。
+  // 只取 /s/ 后面第一段：/s/astronaut/、/s/astronaut/index.html 都是 astronaut
+  var query = new URLSearchParams(location.search);
+  var id = ((location.pathname.split('/s/')[1] || '').split('/')[0] || query.get('t') || '').replace(/[^a-z0-9-]/gi, '');
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/.test(ua), android = /Android/.test(ua);
+  var appStore = 'https://apps.apple.com/app/idAPP_STORE_ID';
+  var play = 'https://play.google.com/store/apps/details?id=com.bennychan.facescene' + (id ? '&referrer=' + encodeURIComponent('tpl=' + id) : '');
+  // 电脑上打开：主按钮去 App Store（先做 iOS），下面再给一个 Google Play
+  var target = android ? play : appStore;
+  document.getElementById('store').href = target;
+  if (!ios && !android) {
+    var p = document.getElementById('play');
+    p.href = play;
+    p.hidden = false;
+  }
+  // 按浏览器语言换文案（生成时嵌进来的 7 种语言），没有的语言保持英文
+  var I18N = {"en":{"h":"Your turn: Space Duo","d":"Put your face into the Space Duo scene — right in your camera. Free to try.","cta":"Try it in FaceScene","play":"Get it on Google Play"},"de":{"h":"Du bist dran: Weltraum-Duo","d":"Steck dein Gesicht in die Szene „Weltraum-Duo“ – direkt in der Kamera. Kostenlos ausprobieren.","cta":"In FaceScene ausprobieren","play":"Bei Google Play laden"},"es":{"h":"Te toca: Dúo espacial","d":"Pon tu cara en la escena «Dúo espacial», directo en tu cámara. Pruébalo gratis.","cta":"Pruébalo en FaceScene","play":"Disponible en Google Play"},"fr":{"h":"À toi : Duo spatial","d":"Mets ton visage dans la scène « Duo spatial », directement dans l'appareil photo. Gratuit à essayer.","cta":"Essayer dans FaceScene","play":"Disponible sur Google Play"},"ja":{"h":"次はあなた：宇宙コンビ","d":"カメラの中で「宇宙コンビ」のシーンに顔をはめよう。無料で試せます。","cta":"FaceScene で試す","play":"Google Play で手に入れよう"},"ko":{"h":"이번엔 네 차례: 우주 듀오","d":"카메라 안에서 ‘우주 듀오’ 장면에 얼굴을 넣어 보세요. 무료로 해볼 수 있어요.","cta":"FaceScene에서 해보기","play":"Google Play에서 받기"},"pt":{"h":"Sua vez: Dupla espacial","d":"Coloque seu rosto na cena “Dupla espacial”, direto na câmera. Experimente grátis.","cta":"Experimente no FaceScene","play":"Disponível no Google Play"}};
+  var lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  var t = I18N[lang];
+  if (t) {
+    document.documentElement.lang = lang;
+    document.querySelector('h1').textContent = t.h;
+    document.querySelector('main p').textContent = t.d;
+    document.getElementById('store').textContent = t.cta;
+    document.getElementById('play').textContent = t.play;
+    document.title = t.h + ' | FaceScene';
+  }
+  // Instagram / TikTok / Facebook / Snapchat 等内置浏览器不走 Universal Link，只能先试自定义 scheme，打不开再去商店。
+  // iOS Safari 里不自动跳：没装 App 时自定义 scheme 会先弹「无法打开页面」，让用户看完预览图自己点按钮。
+  var inApp = /Instagram|FBAN|FBAV|musical_ly|BytedanceWebview|TikTok|Snapchat|Line\/|MicroMessenger/i.test(ua);
+  var timer = null;
+  // App 被拉起时网页会进后台：取消去商店的定时跳转，用户切回来看到的还是这张预览，不是商店页
+  function cancel() { if (document.hidden && timer) { clearTimeout(timer); timer = null; } }
+  document.addEventListener('visibilitychange', cancel);
+  window.addEventListener('pagehide', function () { if (timer) { clearTimeout(timer); timer = null; } });
+  if (inApp && android) {
+    // Android 内置浏览器（Instagram / TikTok WebView）直接跳 facescene:// 在没装 App 时会落到错误页；
+    // 用 intent:// 让系统处理：装了就打开 App，没装就回到本页（带 noapp=1，不再自动尝试，免得来回跳）。
+    // 和 Android Chrome 一个口径：不自动去 Play（先上 iOS 的阶段 Play 上可能还没有这个 App），留在这页看预览、自己点按钮
+    if (id && !query.get('noapp')) {
+      var back = location.origin + location.pathname + '?noapp=1' + (query.get('t') ? '&t=' + encodeURIComponent(id) : '');
+      location.href = 'intent://s/' + id + '#Intent;scheme=facescene;package=com.bennychan.facescene;S.browser_fallback_url=' + encodeURIComponent(back) + ';end';
+    }
+  } else if (inApp && ios) {
+    if (id) location.href = 'facescene://s/' + id;
+    timer = setTimeout(function () { location.href = target; }, 1500);
+  }
+  // Android Chrome 不自动跳：装了 App 的 App Link 已经直接打开；没装的留在这页看预览，自己点按钮去商店
+  //（先上 iOS 的阶段 Play 上可能还没有这个 App，自动跳过去只会看到「找不到应用」）
+</script>
+</body>
+</html>
