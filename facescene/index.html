@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FaceScene — put your face into any scene</title>
+<meta name="description" content="Be a lion, a bride or the world's most wanted — right in your camera. Line your face up with the hole and take the shot. Photos stay on your phone.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F6F1EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D0D11" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://chanbenny111.github.io/facescene/">
+<link rel="icon" href="img/icon.png">
+<link rel="apple-touch-icon" href="img/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FaceScene">
+<meta property="og:title" content="FaceScene — put your face into any scene">
+<meta property="og:description" content="Be a lion, a bride or the world's most wanted — right in your camera.">
+<meta property="og:url" content="https://chanbenny111.github.io/facescene/">
+<meta property="og:image" content="https://chanbenny111.github.io/facescene/og/wanted.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- 上架后加智能横幅：<meta name="apple-itunes-app" content="app-id=APP_STORE_ID"> -->
+<style>
+@font-face{font-family:"Abril Fatface";src:url(fonts/AbrilFatface-Regular.ttf) format("truetype");font-display:swap}
+:root{
+  --paper:#F6F1EA; --ink:#16141A; --muted:#625B57; --card:#FFFCF8; --line:rgba(22,20,26,.12);
+  --coral:#FF5A36; --coral-ink:#C53A1A; --night:#0D0D11;
+  --shadow:0 1px 2px rgba(22,20,26,.06),0 10px 30px rgba(22,20,26,.08);
+  --display:"Abril Fatface",ui-serif,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0D0D11; --ink:#F6F1EA; --muted:#ABA39C; --card:#18171D; --line:rgba(246,241,234,.12);
+    --coral-ink:#FF7A5C; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.3);}
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--coral-ink);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+h1,h2,h3{line-height:1.1;margin:0 0 .5em}
+h1,h2{font-family:var(--display);font-weight:400;letter-spacing:.005em}
+h1{font-size:clamp(2.6rem,7vw,4.6rem)}
+h2{font-size:clamp(1.8rem,4.2vw,2.6rem)}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:12px;background:var(--card);padding:8px 12px;z-index:9}
+header.site{padding:16px 0;border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem;color:var(--ink);text-decoration:none}
+.brand img{width:30px;height:30px;border-radius:8px}
+nav.top a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:.95rem;display:inline-block;padding:10px 0}
+nav.top a:hover{color:var(--ink)}
+.eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-ink);font-weight:700;margin-bottom:.8em}
+.lede{font-size:clamp(1.05rem,2.4vw,1.25rem);color:var(--muted);max-width:34em}
+.muted{color:var(--muted)}
+.small{font-size:.875rem}
+section{padding:72px 0}
+section+section{border-top:1px solid var(--line)}
+.hero{padding:56px 0 72px;overflow:hidden}
+.hero .wrap{display:grid;gap:40px;grid-template-columns:1fr 1fr;align-items:center}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:12px;padding:10px 18px 10px 14px;border:1px solid rgba(255,255,255,.25);line-height:1.1;min-height:52px}
+.badge small{display:block;font-size:.7rem;opacity:.85}
+.badge strong{display:block;font-size:1.15rem;font-weight:600}
+.badge svg{width:22px;height:22px;fill:#fff}
+/* 场景卡：图里的脸洞是透明的，透出后面的渐变，就像取景器里的你 */
+.stage{position:relative;height:clamp(380px,52vw,520px)}
+.scene{position:absolute;width:44%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;box-shadow:0 18px 50px rgba(13,13,17,.28);border:5px solid #fff;
+  background:radial-gradient(60% 40% at 50% 30%,#FFD2B8,#FF8A66 55%,#FF5A36)}
+.scene img{display:block;width:100%;height:100%;object-fit:cover}
+.scene.a{left:4%;top:8%;transform:rotate(-7deg)}
+.scene.b{left:30%;top:0;z-index:2;transform:rotate(2deg)}
+.scene.c{left:54%;top:10%;transform:rotate(8deg)}
+@media (prefers-reduced-motion:no-preference){
+  .scene{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .stage:hover .scene.a{transform:rotate(-10deg) translateX(-12px)}
+  .stage:hover .scene.c{transform:rotate(11deg) translateX(12px)}
+}
+.steps{counter-reset:s;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin:32px 0 0;padding:0}
+.steps li{list-style:none;counter-increment:s;padding:24px;border-radius:20px;background:var(--card);border:1px solid var(--line)}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--paper);font-weight:700;margin-bottom:12px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));margin-top:28px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.pro{display:grid;gap:32px;grid-template-columns:1fr 1fr;align-items:start}
+@media (max-width:760px){.pro{grid-template-columns:1fr}}
+.tick{list-style:none;padding:0;margin:0}
+.tick li{padding:10px 0 10px 30px;border-bottom:1px solid var(--line);position:relative}
+.tick li::before{content:"";position:absolute;left:4px;top:19px;width:12px;height:12px;border-radius:50%;background:var(--coral)}
+.tick.free li::before{background:transparent;border:2px solid var(--coral)}
+footer.site{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer.site nav a{color:var(--muted);margin-right:18px;display:inline-block;padding:6px 0}
+footer.site p{margin:.5em 0}
+@media (max-width:440px){nav.top a:first-child{display:none}}
+@media (max-width:560px){nav.top a{margin-left:12px}section{padding:52px 0}.card{padding:20px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap">
+  <a class="brand" href="./"><img src="img/icon.png" alt="" width="30" height="30">FaceScene</a>
+  <nav class="top" aria-label="Primary"><a href="#how">How it works</a><a href="#pro">Pro</a><a href="#privacy">Privacy</a></nav>
+</div></header>
+<main id="main">
+
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">For iPhone and Android &middot; Free to try</p>
+    <h1>Put your face in the picture.</h1>
+    <p class="lede">Pick a scene &mdash; an astronaut, a shark&rsquo;s lunch, the world&rsquo;s most wanted. The character&rsquo;s face is a hole, laid over your live camera. Line yourself up, tap the shutter, and you&rsquo;re in it.</p>
+    <div class="cta"><!-- 上架后把 APP_STORE_ID 换成真实 ID，并改用官方「Download on the App Store」徽章 -->
+<a class="badge" href="https://apps.apple.com/app/idAPP_STORE_ID" aria-label="Download FaceScene on the App Store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.62c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.5zM14.2 6.16c.6-.74 1.01-1.75.9-2.77-.87.04-1.93.58-2.55 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.97-.49 2.57-1.21z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+<a class="badge" href="https://play.google.com/store/apps/details?id=com.bennychan.facescene" aria-label="Get FaceScene on Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.2c-.3.3-.4.7-.4 1.2v17.2c0 .5.1.9.4 1.2l9.7-9.8L3.6 2.2zm10.8 10.9 2.7 2.7-11.6 6.6c-.4.2-.8.3-1.1.2l10-9.5zm0-2.2-10-9.5c.3-.1.7 0 1.1.2l11.6 6.6-2.7 2.7zm3.9-1.6 3 1.7c.9.5.9 1.5 0 2l-3 1.7-3-3 3-2.4z"/></svg><span><small>Get it on</small><strong>Google Play</strong></span></a>
+    </div>
+    <p class="muted small" style="margin-top:14px">iOS 15 or later &middot; Android 8 or later &middot; 7 languages</p>
+  </div>
+  <div class="stage" role="img" aria-label="Three FaceScene scenes — a wanted poster, an astronaut and a shark — each with a transparent hole where your face goes.">
+    <figure class="scene a" aria-hidden="true"><img src="img/wanted.webp" alt="" width="540" height="960"></figure>
+    <figure class="scene b" aria-hidden="true"><img src="img/astronaut.webp" alt="" width="540" height="960"></figure>
+    <figure class="scene c" aria-hidden="true"><img src="img/shark-bite.webp" alt="" width="540" height="960"></figure>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <p class="eyebrow">How it works</p>
+  <h2>Pick. Line up. Snap.</h2>
+  <ol class="steps">
+    <li><h3>Pick a scene</h3><p class="muted">84 scenes and counting: heroes, pets, weddings, Halloween, holidays, pranks and more &mdash; illustrated and photo-real.</p></li>
+    <li><h3>Line up your face</h3><p class="muted">The scene sits over your live camera, so what you see is what you get. Front or back camera, one face or a whole group.</p></li>
+    <li><h3>Snap and share</h3><p class="muted">Save the photo, or share a short reveal video that drops the scene onto your face. Share it anywhere, Instagram Stories included.</p></li>
+  </ol>
+</div></section>
+
+<section id="features"><div class="wrap">
+  <p class="eyebrow">What&rsquo;s inside</p>
+  <h2>Small details, big laughs</h2>
+  <div class="grid two">
+    <article class="card"><h3>Prank with a friend&rsquo;s photo</h3><p class="muted">Pick any photo from your library. On-device face detection lines the face up with the hole for you &mdash; nudge, pinch or rotate to fine-tune.</p></article>
+    <article class="card"><h3>Make it say anything</h3><p class="muted">Wanted posters, magazine covers and newspapers have text you can rewrite: a name, a reward, a headline.</p></article>
+    <article class="card"><h3>Blends right in</h3><p class="muted">Eight filters and a one-tap blend help your face match the scene&rsquo;s light and colour.</p></article>
+    <article class="card"><h3>Send a scene to a friend</h3><p class="muted">Every shared photo carries a link to the same scene, so whoever sees it can try it in one tap.</p></article>
+  </div>
+</div></section>
+
+<section id="pro"><div class="wrap pro">
+  <div>
+    <p class="eyebrow">FaceScene Pro</p>
+    <h2>Every scene, no fuss.</h2>
+    <p class="muted">FaceScene is free to download. Pro unlocks every scene and removes ads. Start with a free trial, or buy lifetime access once. Prices are shown in the app and vary by country.</p>
+    <p class="muted small">Restore Purchases is always available in Settings and on the upgrade screen.</p>
+  </div>
+  <div class="card">
+    <h3>Free</h3>
+    <ul class="tick free">
+      <li>30 free scenes</li>
+      <li>44 more scenes, each unlocked by watching a short ad</li>
+      <li>Camera, library photos, auto face alignment, filters</li>
+      <li>Photos and reveal videos</li>
+    </ul>
+    <h3 style="margin-top:24px">Pro adds</h3>
+    <ul class="tick">
+      <li>Every scene, including Pro-only scenes and new drops</li>
+      <li>No ads</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="privacy"><div class="wrap narrow">
+  <p class="eyebrow">Private by design</p>
+  <h2>Your photos never leave your phone.</h2>
+  <p class="muted">Every photo is composed on your device. Face detection uses the system&rsquo;s own detector (Apple Vision on iOS, Android&rsquo;s built-in detector), only to place the photo &mdash; nothing is identified, stored or uploaded. FaceScene uses Google Firebase for usage stats and crash reports and Google AdMob for ads, and asks before personalizing ads. <a href="privacy.html">Read the privacy policy</a>.</p>
+</div></section>
+
+</main>
+<footer class="site"><div class="wrap">
+  <nav aria-label="Footer"><a href="../">More apps</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="mailto:chanbenny111@gmail.com?subject=FaceScene">chanbenny111@gmail.com</a></nav>
+  <p>Headings set in Abril Fatface, licensed under the <a href="fonts/OFL-AbrilFatface.txt">SIL Open Font License</a>.</p>
+  <p>&copy; 2026 chanbenny. Apple, iPhone and App Store are trademarks of Apple Inc. Google Play and Android are trademarks of Google LLC.</p>
+</div></footer>
+</body>
+</html>
