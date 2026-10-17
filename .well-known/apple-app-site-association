@@ -4,6 +4,10 @@
       {
         "appIDs": ["R4GBFK853U.com.bennychan.facescene"],
         "components": [{ "/": "/facescene/s/*", "comment": "分享回流：打开对应素材的相机页" }]
+      },
+      {
+        "appIDs": ["R4GBFK853U.com.bennychan.meowcean"],
+        "components": [{ "/": "/meowocean/c/*", "comment": "Meow Ocean friend challenges" }]
       }
     ]
   }

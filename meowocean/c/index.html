@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meow Ocean challenge</title>
+<meta property="og:title" content="Can you beat my score in Meow Ocean?">
+<meta property="og:description" content="A 90-second cat-fish challenge. Tap to play the same ocean.">
+<style>
+  :root { --bg:#e9f8ff; --fg:#10283f; --accent:#1e9bd7; --card:#ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b1a2a; --fg:#e6f2fb; --accent:#6fd0ff; --card:#12283d; } }
+  body { background:var(--bg); color:var(--fg); font:17px/1.6 -apple-system, system-ui, sans-serif; margin:0; padding:32px 16px; text-align:center; }
+  main { max-width:520px; margin:auto; }
+  h1 { color:var(--accent); font-size:2.2em; margin:0 0 4px; }
+  .code { font:700 2em ui-monospace, Menlo, monospace; letter-spacing:.08em; background:var(--card); border-radius:16px; padding:12px 16px; margin:16px 0; word-break:break-all; }
+  .btn { display:block; margin:12px auto; max-width:320px; padding:14px 18px; border-radius:28px; background:var(--accent); color:#fff; font-weight:700; text-decoration:none; }
+  .alt { background:transparent; color:var(--accent); border:2px solid var(--accent); }
+  ol { text-align:left; display:inline-block; margin:8px auto; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+<h1>Meow Ocean</h1>
+<p id="lead">A friend challenged you to a 90-second cat-fish race.</p>
+<div class="code" id="code">—</div>
+<a class="btn" id="open" href="meowcean://c/">Open in Meow Ocean</a>
+<a class="btn alt" href="https://apps.apple.com/app/meow-ocean" id="ios">Get it on the App Store</a>
+<a class="btn alt" href="https://play.google.com/store/apps/details?id=com.bennychan.meowcean&referrer=utm_source%3Dchallenge" id="android">Get it on Google Play</a>
+<p>Already installed but the button didn't open it?</p>
+<ol>
+  <li>Open Meow Ocean and tap <b>Cup</b>.</li>
+  <li>Tap <b>Enter a challenge code</b>.</li>
+  <li>Type the code above.</li>
+</ol>
+<p><a href="../">About Meow Ocean</a> · <a href="../privacy.html">Privacy</a></p>
+</main>
+<script>
+  // Only the challenge code is read from the link; nothing is stored or sent.
+  var code = (new URLSearchParams(location.search).get('c') || '').replace(/[^0-9A-Za-z-]/g, '').slice(0, 16);
+  if (code) {
+    document.getElementById('code').textContent = code.toUpperCase();
+    document.getElementById('open').href = 'meowcean://c/' + encodeURIComponent(code);
+  }
+  var ua = navigator.userAgent;
+  if (/iPhone|iPad|iPod/.test(ua)) document.getElementById('android').style.display = 'none';
+  else if (/Android/.test(ua)) document.getElementById('ios').style.display = 'none';
+</script>
+</body>
+</html>
