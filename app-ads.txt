@@ -1,0 +1,5 @@
+# Ad sellers file for the whole developer site: publish it at the root of the
+# website entered in App Store Connect / Play Console (chanbenny111.github.io).
+# Meow Ocean sells ads only through Google AdMob. If another app on this site
+# adds its own lines, merge them here instead of overwriting.
+google.com, pub-4039441497312236, DIRECT, f08c47fec0942fa0
