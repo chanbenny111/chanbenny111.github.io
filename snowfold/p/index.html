@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Snowfold Puzzle</title>
+<meta name="description" content="Open a Snowfold puzzle a friend sent you.">
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --shell: #F4EFE6; --card: #FFFFFF; --stroke: rgba(0,0,0,.07);
+    --text: #14232B; --text2: #56666F; --accent: #C4313A; --mat: #1E3B45; --matInk: #CFE3E8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --shell: #0D1619; --card: #15232A; --stroke: rgba(255,255,255,.08);
+      --text: #E6EEF0; --text2: #95A6AE; --accent: #F0676E; --mat: #132A31; --matInk: #BFD6DC;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--shell); color: var(--text);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", "Hiragino Sans", sans-serif;
+  }
+  header { background: var(--mat); color: var(--matInk); padding: 48px 20px 40px; }
+  header .wrap, main { max-width: 680px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .02em; }
+  .brand svg { width: 28px; height: 28px; }
+  h1, h2 { font-family: ui-serif, "New York", "Iowan Old Style", Georgia, serif; font-weight: 700; line-height: 1.2; }
+  h1 { font-size: 2.1rem; margin: 18px 0 6px; color: #FAFCFF; }
+  header p { margin: 0; }
+  main { padding: 28px 20px 64px; }
+  h2 { font-size: 1.3rem; margin: 28px 4px 12px; }
+  details { background: var(--card); border: 1px solid var(--stroke); border-radius: 16px; margin: 0 0 10px; }
+  summary { cursor: pointer; list-style: none; padding: 16px 44px 16px 20px; font-weight: 600; position: relative; min-height: 44px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 20px; top: 14px; color: var(--accent); font-size: 1.3rem; line-height: 1; }
+  details[open] summary::after { content: "\2212"; }
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 16px; }
+  .answer { padding: 0 20px 16px; }
+  p, li { margin: 0 0 10px; }
+  ul { padding-left: 1.2em; margin: 0; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  .contact { background: var(--card); border: 1px solid var(--stroke); border-radius: 16px; padding: 20px 22px; }
+  .muted { color: var(--text2); font-size: .94rem; }
+  footer { max-width: 680px; margin: 0 auto; padding: 0 20px 48px; color: var(--text2); font-size: .9rem; }
+  .card { background: var(--card); border: 1px solid var(--stroke); border-radius: 16px; padding: 20px 22px; margin: 0 0 16px; }
+  .button { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 14px;
+            background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
+  .button:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  code { font: .95rem ui-monospace, "SF Mono", Menlo, monospace; word-break: break-all; background: var(--shell); padding: 2px 6px; border-radius: 6px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<!-- Puzzle links land here: https://chanbenny111.github.io/snowfold/p/?c=<code>.
+     With Snowfold installed the link opens the app directly (universal link, see .well-known/apple-app-site-association
+     in the chanbenny111.github.io repo); otherwise this page shows an "Open in Snowfold" button and the code. -->
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="-12 -12 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M0-10V10M-8.66-5 8.66 5M-8.66 5 8.66-5"/><path d="M-2.5-7.5 0-5 2.5-7.5M-2.5 7.5 0 5 2.5 7.5" /></g></svg>
+      Snowfold
+    </div>
+    <h1 id="title">Snowfold</h1>
+    <p id="lead">This puzzle link is missing its code. Ask your friend to send it again.</p>
+  </div>
+</header>
+<main>
+  <section class="card" id="puzzle" hidden>
+    <p>Someone sent you a paper-cutting puzzle. Open it in Snowfold on your iPhone or iPad; puzzles from friends are always free to play.</p>
+    <p><a class="button" id="open" href="snowfold://today">Open in Snowfold</a></p>
+    <p class="muted">If nothing happens, copy this code, then in Snowfold go to Studio, tap the ⋯ menu and choose Open a puzzle code….</p>
+    <p><code id="code"></code></p>
+  </section>
+  <section class="card">
+    <p><a href="../support.html">Support</a> · <a href="../privacy.html">Privacy Policy</a></p>
+  </section>
+</main>
+<script>
+  (function () {
+    // Only the puzzle code is read from the link; nothing is stored or sent.
+    var code = new URLSearchParams(location.search).get("c") || "";
+    if (!/^[A-Za-z0-9_-]{6,}$/.test(code)) return;
+    document.title = "Snowfold Puzzle";
+    document.getElementById("title").textContent = "A puzzle for you";
+    document.getElementById("lead").textContent = "Fold, cut, unfold, and see how close you get.";
+    document.getElementById("open").href = "snowfold://p/" + encodeURIComponent(code);
+    document.getElementById("code").textContent = code;
+    document.getElementById("puzzle").hidden = false;
+  })();
+</script>
+</body>
+</html>

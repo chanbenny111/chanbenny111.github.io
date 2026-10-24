@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Snowfold Support</title>
+<meta name="description" content="Help with Snowfold: restoring purchases, Family Sharing, printing, daily puzzles and accessibility.">
+<style>
+  :root {
+    --shell: #F4EFE6; --card: #FFFFFF; --stroke: rgba(0,0,0,.07);
+    --text: #14232B; --text2: #56666F; --accent: #C4313A; --mat: #1E3B45; --matInk: #CFE3E8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --shell: #0D1619; --card: #15232A; --stroke: rgba(255,255,255,.08);
+      --text: #E6EEF0; --text2: #95A6AE; --accent: #F0676E; --mat: #132A31; --matInk: #BFD6DC;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--shell); color: var(--text);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", "Hiragino Sans", sans-serif;
+  }
+  header { background: var(--mat); color: var(--matInk); padding: 48px 20px 40px; }
+  header .wrap, main { max-width: 680px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .02em; }
+  .brand svg { width: 28px; height: 28px; }
+  h1, h2 { font-family: ui-serif, "New York", "Iowan Old Style", Georgia, serif; font-weight: 700; line-height: 1.2; }
+  h1 { font-size: 2.1rem; margin: 18px 0 6px; color: #FAFCFF; }
+  header p { margin: 0; }
+  main { padding: 28px 20px 64px; }
+  h2 { font-size: 1.3rem; margin: 28px 4px 12px; }
+  details { background: var(--card); border: 1px solid var(--stroke); border-radius: 16px; margin: 0 0 10px; }
+  summary { cursor: pointer; list-style: none; padding: 16px 44px 16px 20px; font-weight: 600; position: relative; min-height: 44px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 20px; top: 14px; color: var(--accent); font-size: 1.3rem; line-height: 1; }
+  details[open] summary::after { content: "\2212"; }
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 16px; }
+  .answer { padding: 0 20px 16px; }
+  p, li { margin: 0 0 10px; }
+  ul { padding-left: 1.2em; margin: 0; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  .contact { background: var(--card); border: 1px solid var(--stroke); border-radius: 16px; padding: 20px 22px; }
+  .muted { color: var(--text2); font-size: .94rem; }
+  footer { max-width: 680px; margin: 0 auto; padding: 0 20px 48px; color: var(--text2); font-size: .9rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="-12 -12 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M0-10V10M-8.66-5 8.66 5M-8.66 5 8.66-5"/><path d="M-2.5-7.5 0-5 2.5-7.5M-2.5 7.5 0 5 2.5 7.5" /></g></svg>
+      Snowfold
+    </div>
+    <h1>Support</h1>
+    <p>Fold a sheet, make a few cuts, unfold. If something gets in the way, the answer is probably below.</p>
+  </div>
+</header>
+<main>
+  <h2>Purchases</h2>
+  <details>
+    <summary>How do I restore my purchase?</summary>
+    <div class="answer">
+      <p>Open Settings (the gear at the top right of any tab) and tap <strong>Restore purchases</strong>, or tap <strong>Restore Purchases</strong> on the Full Version page. A grown-up answers a short question first. Make sure you are signed in to the App Store with the same Apple Account you used to buy Snowfold.</p>
+    </div>
+  </details>
+  <details>
+    <summary>Does Family Sharing work?</summary>
+    <div class="answer">
+      <p>Yes. The full version is a one-time purchase that can be shared with up to five other family members through Family Sharing. On their device, open Snowfold and tap <strong>Restore purchases</strong> if it isn't unlocked straight away. Purchase Sharing must be turned on in the organizer's Family Sharing settings.</p>
+    </div>
+  </details>
+  <details>
+    <summary>What is free, and what does the full version add?</summary>
+    <div class="answer">
+      <p>Free: chapters 1 and 2, every daily puzzle (including the Saturday big snowflake), puzzles friends send you, and half and quarter folds in the Studio and in Endless practice.</p>
+      <p>The full version unlocks chapters 3 to 6, eighth folds and hexagon snowflakes in the Studio and in Endless practice, and printing for every level. It is a single purchase: no subscriptions and no ads.</p>
+    </div>
+  </details>
+
+  <h2>Playing</h2>
+  <details>
+    <summary>When do new daily puzzles appear?</summary>
+    <div class="answer">
+      <p>At midnight in your device's own time zone. Everyone gets the same three puzzles for the same calendar date, plus a big snowflake on Saturdays.</p>
+      <p>If you travel across time zones, the day follows your device's clock, so you may get a new day a little early or late. Your streak includes a rest day each week, and you can catch up on any of the past 30 days from the Today tab (catch-up days don't extend your streak).</p>
+    </div>
+  </details>
+  <details>
+    <summary>A level feels too hard.</summary>
+    <div class="answer">
+      <p>Switch difficulty at any time in Settings. <strong>Little Hands</strong> shows a guide for every cut, always shows the preview and gives stars more easily; finishing the last level of a chapter also opens the next chapter. Changing difficulty never takes stars away.</p>
+      <p>Every cut can be undone, and after unfolding you can tap <strong>Fold back</strong> to keep cutting the same sheet. Press and hold the unfolded paper to lay the target over it and see what is different.</p>
+    </div>
+  </details>
+  <details>
+    <summary>How do I open a puzzle a friend sent me?</summary>
+    <div class="answer">
+      <p>Tap the <code>snowfold://</code> link in their message. If the link doesn't open, copy it (or just the code), then in Snowfold go to <strong>Studio</strong>, tap the <strong>⋯</strong> menu at the top and choose <strong>Open a puzzle code…</strong>. Puzzles from friends are always free to play.</p>
+    </div>
+  </details>
+  <details>
+    <summary>How do I print a puzzle?</summary>
+    <div class="answer">
+      <p>Choose <strong>Print</strong> on the result card after a level, on a piece in the Collection, or on your sheet in the Studio. Snowfold makes a two-page PDF in A4 or US Letter: page 1 shows the numbered fold steps, page 2 the folded piece with its cut lines. Print at 100% (no "fit to page") so the folded shape matches the paper. Levels from chapters 1 and 2 print for free.</p>
+    </div>
+  </details>
+  <details>
+    <summary>How do I add the widget or use Siri?</summary>
+    <div class="answer">
+      <p>Touch and hold the Home Screen, tap <strong>Edit</strong> then <strong>Add Widget</strong>, and choose Snowfold (small or medium). It shows today's puzzles and your streak; tap it to start a puzzle.</p>
+      <p>You can also say "Open today's puzzles in Snowfold" or "Open the Snowfold studio" to Siri, or find both actions in the Shortcuts app.</p>
+    </div>
+  </details>
+
+  <h2>Accessibility</h2>
+  <details>
+    <summary>Which accessibility features does Snowfold support?</summary>
+    <div class="answer">
+      <ul>
+        <li><strong>Dynamic Type</strong> up to the largest accessibility sizes on every screen.</li>
+        <li><strong>VoiceOver</strong> reads every screen, level and result, for example "3 of 3 stars, 86% match". You can fold with a VoiceOver action, and on Little Hands you can also cut along each guide with a VoiceOver action. Free cutting in the Studio is a drawing task and needs touch.</li>
+        <li><strong>Reduce Motion</strong> replaces the unfolding animation with a short fade.</li>
+        <li><strong>Dark Mode</strong> and <strong>Increase Contrast</strong> are followed automatically. Settings adds <strong>High-contrast paper</strong> and <strong>Slower animations</strong>.</li>
+        <li>A <strong>left-handed layout</strong> that moves the tools and the Unfold button to the left.</li>
+        <li><strong>Connect the dots</strong> cutting: tap corner by corner instead of dragging a cut.</li>
+        <li>Results never rely on colour alone: stars are filled or outlined and read out as a number, and Compare marks extra cuts with stripes and missed cuts with dots.</li>
+      </ul>
+    </div>
+  </details>
+
+  <h2>Privacy</h2>
+  <details>
+    <summary>What do you collect?</summary>
+    <div class="answer">
+      <p>Nothing. There is no account, no analytics and no tracking, and your progress stays on your device. Read the full <a href="privacy.html">privacy policy</a>.</p>
+    </div>
+  </details>
+
+  <h2>Contact</h2>
+  <div class="contact">
+    <p>Write to <a href="mailto:chanbenny111@gmail.com">chanbenny111@gmail.com</a>. Tell us your device, iOS version and Snowfold version (Settings &gt; About) and what you were doing. A screenshot helps.</p>
+    <p class="muted">We read every message. Replies usually take a few days.</p>
+  </div>
+</main>
+<footer><a href="privacy.html">Privacy Policy</a></footer>
+</body>
+</html>
