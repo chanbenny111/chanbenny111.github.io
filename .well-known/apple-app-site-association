@@ -2,12 +2,37 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["R4GBFK853U.com.bennychan.facescene"],
-        "components": [{ "/": "/facescene/s/*", "comment": "分享回流：打开对应素材的相机页" }]
+        "appIDs": [
+          "R4GBFK853U.com.bennychan.facescene"
+        ],
+        "components": [
+          {
+            "/": "/facescene/s/*",
+            "comment": "分享回流：打开对应素材的相机页"
+          }
+        ]
       },
       {
-        "appIDs": ["2F3R9U9S7J.com.bennychan.meowcean"],
-        "components": [{ "/": "/meowocean/c/*", "comment": "Meow Ocean friend challenges" }]
+        "appIDs": [
+          "2F3R9U9S7J.com.bennychan.meowcean"
+        ],
+        "components": [
+          {
+            "/": "/meowocean/c/*",
+            "comment": "Meow Ocean friend challenges"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "2F3R9U9S7J.app.snowfold"
+        ],
+        "components": [
+          {
+            "/": "/snowfold/p/*",
+            "comment": "Snowfold shared puzzles (?c=<code>)"
+          }
+        ]
       }
     ]
   }
