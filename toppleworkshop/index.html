@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Topple Workshop</title>
+<meta name="description" content="Build a domino chain, topple it, and watch the score climb. An offline chain-reaction puzzle for iPhone and iPad.">
+<style>
+  :root {
+    --shell: #F4EFE7; --card: #FBF8F2; --stroke: #D9D0C2;
+    --text: #2A2522; --text2: #585048; --accent: #7E551B; --mat: #2A2522; --matInk: #E3D3B4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --shell: #141210; --card: #1E1B18; --stroke: #322D29;
+      --text: #F2EDE6; --text2: #B4A99D; --accent: #E0AF5B; --mat: #0E0D0C; --matInk: #E3D3B4;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--shell); color: var(--text);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", "Hiragino Sans", sans-serif;
+  }
+  header { background: var(--mat); color: var(--matInk); padding: 48px 20px 40px; }
+  header .wrap, main { max-width: 680px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .02em; }
+  .brand svg { width: 28px; height: 28px; }
+  h1 { font-family: ui-serif, "New York", "Iowan Old Style", Georgia, serif; font-weight: 700; line-height: 1.2;
+       font-size: 2.1rem; margin: 18px 0 6px; color: #FBF8F2; }
+  header p { margin: 0 0 6px; }
+  main { padding: 28px 20px 64px; }
+  p { margin: 0 0 10px; }
+  p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  .card { background: var(--card); border: 1px solid var(--stroke); border-radius: 16px; padding: 20px 22px; margin: 0 0 16px; }
+  .muted { color: var(--text2); font-size: .94rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><g fill="currentColor"><rect x="3" y="7" width="5" height="16" rx="1.2"/><rect x="11" y="7" width="5" height="16" rx="1.2" transform="rotate(22 13.5 23)"/><rect x="19" y="7" width="5" height="16" rx="1.2" transform="rotate(58 21.5 23)"/></g></svg>
+      Topple Workshop
+    </div>
+    <h1>Build the chain. Topple it.</h1>
+    <p>A chain-reaction puzzle for iPhone and iPad. Lay dominoes on a grid, push the first one, and watch the chain ring bells, cross rivers and climb stairs on its way to the score.</p>
+    <p lang="zh-Hans">万骨连倒：多米诺工坊。设计连锁，推倒，看分数一路涨。</p>
+  </div>
+</header>
+<main>
+  <section class="card">
+    <p>Clients send commissions with a block budget and three stars to earn. The clicks you win buy new block types and bigger maps in your own workshop, and an apprentice rebuilds your blueprint while you are away, for up to 8 hours.</p>
+    <p>Every layout fits into a short chain code you can send to a friend, and every run can be saved as a 15-second vertical video. The app works fully offline: no account, no ads, no tracking.</p>
+  </section>
+  <section class="card">
+    <p><a href="support.html">Support</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:chanbenny111@gmail.com">chanbenny111@gmail.com</a></p>
+  </section>
+</main>
+</body>
+</html>

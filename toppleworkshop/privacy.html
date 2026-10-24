@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · Privacy Policy · Topple Workshop</title>
+<style>
+:root { color-scheme: light dark;
+  --bg:#F4EFE7; --card:#FBF8F2; --text:#2A2522; --dim:#585048; --line:#D9D0C2; --accent:#7E551B; }
+@media (prefers-color-scheme: dark) { :root {
+  --bg:#141210; --card:#1E1B18; --text:#F2EDE6; --dim:#B4A99D; --line:#322D29; --accent:#E0AF5B; } }
+* { box-sizing:border-box }
+body { margin:0; padding:32px 16px 64px; background:var(--bg); color:var(--text);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",sans-serif; }
+main { max-width:44rem; margin:0 auto }
+h1 { font-size:1.75rem; line-height:1.25; margin:0 0 .25em }
+h2 { font-size:1.15rem; margin:2em 0 .5em; padding-top:1em; border-top:1px solid var(--line) }
+h2:first-of-type { border-top:0; padding-top:0 }
+p, li { color:var(--text) }
+.lede { color:var(--dim) }
+table { width:100%; border-collapse:collapse; margin:1em 0; font-size:.95rem }
+th, td { text-align:left; padding:.5em .6em; border-bottom:1px solid var(--line); vertical-align:top }
+th { color:var(--dim); font-weight:600 }
+code { background:var(--card); padding:.1em .35em; border-radius:4px; font-size:.9em }
+footer { margin-top:3em; color:var(--dim); font-size:.85rem }
+.pending { color:var(--accent); font-weight:600 }
+</style>
+</head>
+<body>
+<main>
+<h1>隐私政策 · Privacy Policy</h1>
+<p class="lede">万骨连倒：多米诺工坊 / Topple Workshop</p>
+
+<h2>一句话 · In one line</h2>
+<p>这个 App 不联网，不收集任何数据，也不要任何系统权限。你做的每一份布局、每一张蓝图、
+每一点进度都只存在你自己的设备上。</p>
+<p>This app never connects to a network, collects no data, and requests no system permissions.
+Every layout, blueprint and bit of progress you make stays on your own device.</p>
+
+<h2>收集了什么 · What is collected</h2>
+<p><strong>无 / none。</strong>App Store 的「App 隐私」问卷上，这个 App 的答案是
+<strong>Data Not Collected</strong>：没有账号、没有分析、没有崩溃上报、没有广告标识符。</p>
+<p>下面这张表不是手写的承诺，是一个审计脚本每次提交前扫一遍装机源码得到的结果；
+扫出任何一项，提交就会被拒绝。</p>
+<table><thead><tr><th>类别 · Category</th><th>扫到的东西 · Found</th></tr></thead>
+<tbody><tr><td>联网</td><td>无 · none</td></tr><tr><td>跨 App 追踪 / 设备标识</td><td>无 · none</td></tr><tr><td>第三方分析 SDK</td><td>无 · none</td></tr><tr><td>硬编码凭据</td><td>无 · none</td></tr><tr><td>广告</td><td>无 · none</td></tr><tr><td>会弹系统权限窗的 API · Permission-prompting APIs</td><td>无 · none</td></tr><tr><td>内购 · In-app purchases</td><td>无 · none</td></tr><tr><td>第三方依赖 · Third-party dependencies</td><td>无 · none</td></tr></tbody></table>
+
+<h2>数据存在哪 · Where your data lives</h2>
+<p>在 App 自己的容器里，以及一个只给桌面小组件读的 App Group 容器
+（<code>group.com.chanbenny.toppleworkshop</code>）。两处都在你的设备上，随系统备份走，
+删除 App 即全部删除。没有服务器，所以也没有「删除我的账号」这件事——没有账号。</p>
+<p>Your data lives in the app's own container and in an App Group container read by the
+home-screen widget. Both are on your device, included in your own backups, and removed
+entirely when you delete the app. There is no server and no account.</p>
+
+<h2>连锁码和导出的视频 · Chain codes and exported videos</h2>
+<p>连锁码是一串字符，导出的视频是一个写在 App 临时目录里的 15 秒 mp4。两者都交给
+系统分享面板，由你决定发给谁或存到哪。App 不读相册，也不申请相册权限，
+这两条路都不经过任何服务器。</p>
+<p>A chain code is a string of characters; an exported replay is a 15-second mp4 written to the
+app's temporary directory. Both are handed to the system share sheet, and where they go is your
+choice. The app never reads your photo library and never asks for photo permission.</p>
+
+<h2>Required Reason API</h2>
+<p>Apple 要求声明几类系统 API 的使用理由。这个 App 用到的只有这些，理由码与
+<code>PrivacyInfo.xcprivacy</code> 双向比对（用了没声明、声明了没用，都会让提交失败）：</p>
+<table><thead><tr><th>类目 · Category</th><th>理由码 · Reason</th><th>用到几处 · Uses</th></tr></thead>
+<tbody><tr><td>DiskSpace</td><td>E174.1</td><td>2</td></tr><tr><td>UserDefaults</td><td>CA92.1</td><td>16</td></tr></tbody></table>
+
+<h2>儿童 · Children</h2>
+<p>年龄分级 4+。没有广告、没有内购、没有社交功能、没有外部链接，也没有任何针对儿童的
+数据收集——因为根本没有数据收集。</p>
+<p>Rated 4+. No ads, no in-app purchases, no social features, no outbound links, and no data
+collection from children, because there is no data collection at all.</p>
+
+<h2>这份政策变了怎么办 · Changes</h2>
+<p>这一页是从代码里的事实生成的：行为变了，它才会变，而且改行为的那次提交就会连带改这一页。
+要是哪天这个 App 真的需要联网，这里会先写清楚联什么、为什么。</p>
+
+<h2>联系 · Contact</h2>
+<p><a href="mailto:chanbenny111@gmail.com">chanbenny111@gmail.com</a></p>
+<footer>这个页面由 <code>scripts/privacy_audit.py</code> 从代码里的事实生成，手改会在下一次提交时被拦下。<br>This page is generated from facts in the source by <code>scripts/privacy_audit.py</code>.</footer>
+</main>
+</body>
+</html>

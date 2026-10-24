@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>支持 · Support · Topple Workshop</title>
+<style>
+:root { color-scheme: light dark;
+  --bg:#F4EFE7; --card:#FBF8F2; --text:#2A2522; --dim:#585048; --line:#D9D0C2; --accent:#7E551B; }
+@media (prefers-color-scheme: dark) { :root {
+  --bg:#141210; --card:#1E1B18; --text:#F2EDE6; --dim:#B4A99D; --line:#322D29; --accent:#E0AF5B; } }
+* { box-sizing:border-box }
+body { margin:0; padding:32px 16px 64px; background:var(--bg); color:var(--text);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",sans-serif; }
+main { max-width:44rem; margin:0 auto }
+h1 { font-size:1.75rem; line-height:1.25; margin:0 0 .25em }
+h2 { font-size:1.15rem; margin:2em 0 .5em; padding-top:1em; border-top:1px solid var(--line) }
+h2:first-of-type { border-top:0; padding-top:0 }
+p, li { color:var(--text) }
+.lede { color:var(--dim) }
+table { width:100%; border-collapse:collapse; margin:1em 0; font-size:.95rem }
+th, td { text-align:left; padding:.5em .6em; border-bottom:1px solid var(--line); vertical-align:top }
+th { color:var(--dim); font-weight:600 }
+code { background:var(--card); padding:.1em .35em; border-radius:4px; font-size:.9em }
+footer { margin-top:3em; color:var(--dim); font-size:.85rem }
+.pending { color:var(--accent); font-weight:600 }
+</style>
+</head>
+<body>
+<main>
+<h1>支持 · Support</h1>
+<p class="lede">万骨连倒：多米诺工坊 / Topple Workshop</p>
+
+<h2>这个 App 是什么 · What it is</h2>
+<p>在方格上铺骨牌，推倒，看一条连锁一路跑完。委托关有块数限制和三星评价；工坊是没有限制的沙盒；
+学徒在你离线时照着蓝图重搭，最多累积 8 小时。</p>
+
+<h2>常见问题 · Common questions</h2>
+<table><tbody>
+<tr><th>连锁码贴进去说「不完整」</th>
+<td>码是一串完整的字符，中间不能断行或少字符。从聊天软件里复制时容易漏掉末尾，
+整条重新复制一次即可。导入界面会告诉你还差几个字符。</td></tr>
+<tr><th>学徒的收益停了</th>
+<td>学徒最多连续干 8 小时，到顶就不再累积。回来领一次，再交一份分数更高的蓝图，时率会跟着涨。</td></tr>
+<tr><th>桌面小组件不更新</th>
+<td>小组件读的是 App Group 里的学徒进度快照，打开一次 App 即会刷新。
+系统也会按自己的节奏限制刷新频率。</td></tr>
+<tr><th>导出的视频存到哪了</th>
+<td>视频先写在 App 的临时目录，然后交给系统分享面板，由你选择存到「文件」、相册还是直接发出去。
+没有在分享面板里保存的话，系统会自行清理。</td></tr>
+<tr><th>换手机了，进度怎么带走</th>
+<td>进度在 App 的容器里，跟着 iCloud/iTunes 整机备份一起走。单份布局也可以用连锁码带走。</td></tr>
+<tr><th>有广告或内购吗</th>
+<td>这一版没有广告，也没有内购。</td></tr>
+</tbody></table>
+
+<h2>无障碍 · Accessibility</h2>
+<p>全界面支持动态字体（含辅助功能超大字号）、VoiceOver 与「减弱动态效果」。
+棋盘上的块型不只靠颜色区分：每种块型有自己的轮廓和顶面刻纹，灰度下也分得出。</p>
+
+<h2>隐私 · Privacy</h2>
+<p>不联网、不收集数据、不要权限。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<h2>联系 · Contact</h2>
+<p>遇到问题、想要某个块型、或者只是想给看一条特别长的连锁：<a href="mailto:chanbenny111@gmail.com">chanbenny111@gmail.com</a></p>
+<footer>这个页面由 <code>scripts/privacy_audit.py</code> 从代码里的事实生成，手改会在下一次提交时被拦下。<br>This page is generated from facts in the source by <code>scripts/privacy_audit.py</code>.</footer>
+</main>
+</body>
+</html>
