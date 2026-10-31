@@ -1,0 +1,23 @@
+/* 和 App 同一套色板（Resources/Assets.xcassets 的 Any/Dark 两套外观）。 */
+:root {
+  --canvas: #CFE6DA; --surface: #FFFFFF; --ink: #1D2440;
+  --muted: #4A5570; --accent: #FFC53D; --hairline: rgba(29,36,64,.16);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --canvas: #1B2A28; --surface: #22312F; --ink: #F2F5F4; --muted: #B6C3BF; --hairline: rgba(242,245,244,.18); }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 32px 20px 64px; background: var(--canvas); color: var(--ink);
+  font: 17px/1.65 -apple-system, "SF Pro Rounded", "PingFang SC", system-ui, sans-serif;
+}
+main { max-width: 42rem; margin: 0 auto; background: var(--surface); border-radius: 20px; padding: 28px; }
+h1 { font-size: 1.75rem; margin: 0 0 4px; }
+h2 { font-size: 1.15rem; margin: 32px 0 8px; }
+.lede { color: var(--muted); margin-top: 0; }
+hr { border: 0; border-top: 1px solid var(--hairline); margin: 40px 0; }
+ul { padding-left: 1.2em; }
+li { margin: 6px 0; }
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+footer { max-width: 42rem; margin: 16px auto 0; color: var(--muted); font-size: .9rem; }
+code { background: var(--canvas); padding: 1px 5px; border-radius: 6px; font-size: .9em; }
